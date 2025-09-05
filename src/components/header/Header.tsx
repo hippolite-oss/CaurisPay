@@ -33,11 +33,7 @@ const Header: React.FC = () => {
           <span className="navbar-brand">CaurisPay</span>
         </div>
 
-        {/* Dark/Light Button */}
-        <button onClick={toggleTheme} className="theme-toggle">
-          {isDarkMode ? "☀️" : "🌙"}
-        </button>
-
+       
         {/* Hamburger */}
         <button
           className={`hamburger ${isMenuOpen ? "open" : ""}`}
@@ -62,6 +58,11 @@ const Header: React.FC = () => {
             <Link to="/inscription" className="btn signup" onClick={closeMenu}>Sign Up</Link>
           </div>
         </div>
+         {/* Dark/Light Button */}
+        <button onClick={toggleTheme} className="theme-toggle">
+          {isDarkMode ? "☀️" : "🌙"}
+        </button>
+
       </header>
 
       {/* Overlay */}
