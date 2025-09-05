@@ -7,12 +7,19 @@ import logo from "../../assets/logo-cauris.svg";
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Bascule Dark / Light mode
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+    document.body.classList.toggle("dark-mode");
+  };
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
@@ -25,6 +32,11 @@ const Header: React.FC = () => {
           <img src={logo} alt="Logo CaurisPay" />
           <span className="navbar-brand">CaurisPay</span>
         </div>
+
+        {/* Dark/Light Button */}
+        <button onClick={toggleTheme} className="theme-toggle">
+          {isDarkMode ? "☀️" : "🌙"}
+        </button>
 
         {/* Hamburger */}
         <button
@@ -39,60 +51,21 @@ const Header: React.FC = () => {
         {/* Menu */}
         <div className={`navbar-content ${isMenuOpen ? "open" : ""}`}>
           <nav className="navbar-links">
-            <ScrollLink
-              to="products"
-              smooth={true}
-              duration={600}
-              offset={-70}
-              onClick={closeMenu}
-            >
-              Products
-            </ScrollLink>
-            <ScrollLink
-              to="customers"
-              smooth={true}
-              duration={600}
-              offset={-70}
-              onClick={closeMenu}
-            >
-              Customers
-            </ScrollLink>
-            <ScrollLink
-              to="pricing"
-              smooth={true}
-              duration={600}
-              offset={-70}
-              onClick={closeMenu}
-            >
-              Pricing
-            </ScrollLink>
-            <ScrollLink
-              to="learn"
-              smooth={true}
-              duration={600}
-              offset={-70}
-              onClick={closeMenu}
-            >
-              Learn
-            </ScrollLink>
+            <ScrollLink to="products" smooth duration={600} offset={-70} onClick={closeMenu}>Products</ScrollLink>
+            <ScrollLink to="customers" smooth duration={600} offset={-70} onClick={closeMenu}>Customers</ScrollLink>
+            <ScrollLink to="pricing" smooth duration={600} offset={-70} onClick={closeMenu}>Pricing</ScrollLink>
+            <ScrollLink to="learn" smooth duration={600} offset={-70} onClick={closeMenu}>Learn</ScrollLink>
           </nav>
 
           <div className="navbar-buttons">
-            <Link to="/connexion" className="btn login" onClick={closeMenu}>
-              Login
-            </Link>
-            <Link to="/inscription" className="btn signup" onClick={closeMenu}>
-              Sign Up
-            </Link>
+            <Link to="/connexion" className="btn login" onClick={closeMenu}>Login</Link>
+            <Link to="/inscription" className="btn signup" onClick={closeMenu}>Sign Up</Link>
           </div>
         </div>
       </header>
 
       {/* Overlay */}
-      <div
-        className={`navbar-overlay ${isMenuOpen ? "open" : ""}`}
-        onClick={closeMenu}
-      ></div>
+      <div className={`navbar-overlay ${isMenuOpen ? "open" : ""}`} onClick={closeMenu}></div>
     </>
   );
 };
