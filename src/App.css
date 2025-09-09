@@ -22,6 +22,10 @@ body.dark-mode .mission{
   filter: invert(93%) hue-rotate(180deg) brightness(90%) contrast(85%);
   transition: filter 0.3s ease;
 }
+body.dark-mode .connexion-container{
+  filter: invert(93%) hue-rotate(180deg) brightness(90%) contrast(85%);
+  transition: filter 0.3s ease;
+}
 
 body.dark-mode .plan{
   filter: invert(93%) hue-rotate(180deg) brightness(90%) contrast(85%);
