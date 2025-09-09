@@ -51,11 +51,11 @@ body.dark-mode .navbar-content{
   transition: filter 0.3s ease;
 }
 body.dark-mode .btn.login {
-  color: #f5f5f5;
+  color: #35667c;
   border-color: #ccc;
 }
 body.dark-mode .btn.signup {
-  background-color: #2d2d2e;
+  background-color: #cdcfcd;
   color: #fff;
 }
 .theme-toggle {
