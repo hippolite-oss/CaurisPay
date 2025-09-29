@@ -29,7 +29,7 @@ const Header: React.FC = () => {
       <header className={`navbar ${isScrolled ? "scrolled" : ""}`}>
         {/* Logo */}
         <div className="navbar-logo">
-          <img src={logo} alt="Logo CaurisPay" />
+          <img src={logo} alt="Logo CaurisPay"/>
           <span className="navbar-brand">CaurisPay</span>
         </div>
 
