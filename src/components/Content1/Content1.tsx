@@ -11,8 +11,7 @@ const Content1 = () => {
             Get paid early Save automatically all your pay.
           </p>
           <h6 className="subtext">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est harum
-            ut providen?
+            Inscrivez-vous des maintenant et profitez de nos se rvivices.
           </h6>
           <form className="email-form">
             <input
