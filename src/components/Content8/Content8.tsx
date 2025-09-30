@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
-import logo from "../../assets/c.svg";
+import logo from "/public/c.svg";
 import "./Content8.css";
 
 function Content8() {
